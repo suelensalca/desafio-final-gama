@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>JobsNET Cadastro</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="img/logo.png" alt="Logo" style="width: 70px; height: 70px;">
+        </div>
+        <ul>
+            <li>
+                <a target="blank" href="#">Sobre</a>
+            </li>
+            <li>
+                <a target="blank" href="#">Empresas Parceiras</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div class="textoCadastro">
+            <h1>Cadastro de Currículo</h1>
+            <p>A JobsNET é uma empresa especialista em recrutamento e seleção de profissionais nas mais diversas áreas. Faça seu cadastro de currículo para se conectar às oportunidades de emprego!</p>
+            <br>
+            <img src="img/img_landpage.png" alt="landpage" style="width: 400px">
+        </div>
+        
+        <section class="formulario">
+            <form>
+                
+                <h2>Dados Pessoais</h2>
+                <section class="dadosPessoais">
+
+                    <div>
+                        <label>Nome Completo</label>
+                        <input type="text" name="nome" placeholder="Digite seu nome" size="27" id="nome" required>
+                    </div>
+                    
+                    <div>
+                        <label>Cargo Pretendido</label>
+                        <input type="text" name="cargo" id="cargo" required>
+                    </div>
+                    
+                    <div>
+                        <label>Data de Nascimento</label>
+                        <input type="date" name="nascimento" id="nascimento" required>
+                    </div>
+                    
+                    <div>
+                        <label>Estado Civil</label>
+                        <select id="estadocivil">
+                            <option>Solteiro(a)</option>
+                            <option>Casado(a)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label>Sexo</label>
+                        <select id="sexo">
+                            <option>Feminino</option>
+                            <option>Masculino</option>
+                            <option>Prefiro não dizer</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label>Endereço</label>
+                        <input type="text" name="endereco" placeholder="Rua, 56. Bloco 2, AP 301" size="33" id="endereco" required>
+                    </div>
+                    
+                    <div>
+                        <label>Bairro</label>
+                        <input type="text" name="bairro" size="36" id="bairro" required>
+                    </div>
+                    
+                    <div>
+                        <label>Cidade</label>
+                        <input type="text" name="cidade" size="29" id="cidade" required>
+                    </div>
+                    
+                    <div>
+                        <label>CEP</label>
+                        <input type="text" name="cep" size="37" id="cep" required>
+                    </div>
+                    
+                    <div>
+                        <label>Telefone Fixo</label>
+                        <input type="text" name="telefone" size="24" id="telefone">
+                    </div>
+                    
+                    <div>
+                        <label>Celular</label>
+                        <input type="text" name="celular" size="35" id="celular" required>
+                    </div>
+                    
+                    <div>
+                        <label>E-mail</label>
+                        <input type="email" name="email" placeholder="meunome@exemplo.com" size="30" id="email" required>
+                    </div>
+                </section>
+                
+                <h2>Documentos</h2>
+                <section class="documentos">
+                    
+                    <div>
+                        <label>Identidade</label>
+                        <input type="email" name="identidade" size="32" id="identidade">
+                    </div>
+                    
+                    <div>
+                        <label>CPF</label>
+                        <input type="email" name="cpf" size="32" id="cpf" required>
+                    </div>
+                    
+                    <div>
+                        <label>Possui Veículo?</label>
+                        <select id="veiculo">
+                            <option>Sim</option>
+                            <option>Não</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label>Possui Habilitação?</label>
+                        <select id="habilitacao">
+                            <option>Sim</option>
+                            <option>Não</option>
+                        </select>
+                    </div>
+                </section>
+                
+                <button class="botao" type="submit">Cadastrar</button>
+                
+            </form>
+        </section>      
+    </main>
+    <footer>
+        <ul>
+            <li>
+                <a target="blank" href="mailto:teste@teste.com">Contato</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

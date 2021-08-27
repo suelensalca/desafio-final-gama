@@ -1,0 +1,169 @@
+body {
+    background-color: rgb(2, 155, 194);
+    font-family: sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 10px;
+}
+
+header {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+}
+
+header li {
+    display: flex;
+    padding: 0px 25px 0px 25px;
+}
+
+ul {
+    list-style: none;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(19, 2, 92);
+}
+
+.textoCadastro {
+    min-width: 400px;
+    max-width: 500px;
+}
+
+.textoCadastro h1, p {
+    text-align: center;
+    color: rgb(19, 2, 92);
+}
+
+.textoCadastro p {
+    font-size: large;
+}
+
+.textoCadastro img {
+    display: block;
+    margin: 40px auto;
+}
+
+.formulario {
+    align-content: center;
+    min-width: 600px;
+    max-width: 800px;
+    border: #fff;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+h2 {
+    text-align: center;
+}
+
+.dadosPessoais {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.dadosPessoais div {
+    padding: 5px 10px;
+}
+
+.documentos {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px 10px;  
+}
+
+.documentos div {
+    padding: 5px 10px;
+}
+
+.formulario .botao {
+    display: block;
+    margin: 10px auto;
+}
+
+.botao {
+    width: 15%;
+    text-align: center;
+    padding: 5px 10px;
+    background: linear-gradient(to right, rgb(83, 184, 209) 50%, rgb(2, 155, 194) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.botao:hover {
+    background-position: left bottom;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    margin: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+    main {
+        display: block;
+        width: 100%;
+    }
+    header {
+        display: flex;
+        width: fit-content;
+    }
+    .formulario {
+        display: block;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .formulario {
+        min-width: 370px;
+        max-width: 370px;
+        align-content: center;
+    }
+    .documentos {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 5px 10px;
+    }
+    .dadosPessoais {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 5px 10px;
+    }
+    .botao {
+        width: max-content;
+    }
+}
