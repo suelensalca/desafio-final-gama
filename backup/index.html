@@ -14,10 +14,10 @@
         </div>
         <ul>
             <li>
-                <a target="blank" href="#">Sobre</a>
+                <a target="_self" href="#sobre">Sobre</a>
             </li>
             <li>
-                <a target="blank" href="#">Empresas Parceiras</a>
+                <a target="_self" href="#empresas">Empresas Parceiras</a>
             </li>
         </ul>
     </header>
@@ -34,7 +34,7 @@
                 
                 <h2>Dados Pessoais</h2>
                 <section class="dadosPessoais">
-
+                    
                     <div>
                         <label>Nome Completo</label>
                         <input type="text" name="nome" placeholder="Digite seu nome" size="27" id="nome" required>
@@ -68,28 +68,33 @@
                     </div>
                     
                     <div>
+                        <label>CEP</label>
+                        <input type="text" name="cep" size="10" id="cep" required>
+                    </div>
+                    
+                    <div>
                         <label>Endereço</label>
-                        <input type="text" name="endereco" placeholder="Rua, 56. Bloco 2, AP 301" size="33" id="endereco" required>
+                        <input type="text" name="endereco" placeholder="Rua, 56. Bloco 2, AP 301" size="54" id="endereco" required>
                     </div>
                     
                     <div>
                         <label>Bairro</label>
-                        <input type="text" name="bairro" size="36" id="bairro" required>
+                        <input type="text" name="bairro" size="16" id="bairro" required>
                     </div>
                     
                     <div>
                         <label>Cidade</label>
-                        <input type="text" name="cidade" size="29" id="cidade" required>
+                        <input type="text" name="cidade" size="17" id="cidade" required>
                     </div>
                     
                     <div>
-                        <label>CEP</label>
-                        <input type="text" name="cep" size="37" id="cep" required>
+                        <label>Estado</label>
+                        <input type="text" name="estado" size="17" id="estado">
                     </div>
                     
                     <div>
                         <label>Telefone Fixo</label>
-                        <input type="text" name="telefone" size="24" id="telefone">
+                        <input type="text" name="telefone" size="23" id="telefone">
                     </div>
                     
                     <div>
@@ -99,7 +104,7 @@
                     
                     <div>
                         <label>E-mail</label>
-                        <input type="email" name="email" placeholder="meunome@exemplo.com" size="30" id="email" required>
+                        <input type="email" name="email" placeholder="meunome@exemplo.com" size="29" id="email" required>
                     </div>
                 </section>
                 
@@ -136,8 +141,23 @@
                 <button class="botao" type="submit">Cadastrar</button>
                 
             </form>
-        </section>      
+        </section>
     </main>
+    <section id="sobre">
+        <div>
+            <h2>Sobre</h2>
+            <p>
+                <br>Você está no maior portal de empregos do país! Aqui suas possibilidades de entrar no mercado de trabalho são muito maiores.<br>
+                Nosso maior objetivo é criar um ambiente seguro e confiável que promove o contato direto entre quem está procurando emprego e quem está contratando.
+            </p>
+        </div>
+    </section>
+    <section id="empresas">
+        <div>
+            <h2>Empresas Parceiras</h2>
+            <img src="img/empresas.png" alt="empresas" style="width: 500px;">
+        </div>
+    </section>
     <footer>
         <ul>
             <li>
@@ -146,4 +166,45 @@
         </ul>
     </footer>
 </body>
+
+<script>
+    const limparFormulario = (endereco) => {
+        document.getElementById('endereco').value = '';
+        document.getElementById('bairro').value = '';
+        document.getElementById('cidade').value = '';
+        document.getElementById('estado').value = '';
+    }
+
+    const preencherFormulario = (endereco) => {
+        document.getElementById('endereco').value = endereco.logradouro;
+        document.getElementById('bairro').value = endereco.bairro;
+        document.getElementById('cidade').value = endereco.localidade;
+        document.getElementById('estado').value = endereco.uf;
+    }
+    
+    const eNumero = (numero) => /^[0-9]+$/.test(numero);
+    const cepValido = (cep) => cep.length == 8 && eNumero(cep);
+    
+    const pesquisarCep = async() => {
+        limparFormulario();
+        
+        const cep = document.getElementById('cep').value;
+        const url = `http://viacep.com.br/ws/${cep}/json/`;
+        
+        if (cepValido(cep)) {
+            const dados = await fetch(url);
+            const endereco = await dados.json();
+            
+            if (endereco.hasOwnProperty('erro')){
+                document.getElementById('endereco').value = 'CEP não encontrado!';
+            }else {
+                preencherFormulario(endereco);
+            }
+        } else {
+            document.getElementById('endereco').value = 'CEP incorreto!';
+        }
+    }
+
+    document.getElementById('cep').addEventListener('focusout', pesquisarCep);
+</script>
 </html>

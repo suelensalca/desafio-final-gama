@@ -98,7 +98,7 @@ h2 {
 
 .formulario .botao {
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
 }
 
 .botao {
@@ -113,7 +113,7 @@ h2 {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin: 10px;
+    margin: 20px;
 }
 
 .botao:hover {
@@ -121,9 +121,32 @@ h2 {
     color: #fff;
 }
 
+#sobre {
+    display: flex;
+}
+
+#sobre div, h2, p {
+    width: 99%;
+    text-align: center;
+    color: rgb(19, 2, 92);
+    margin: 20px;
+    padding-bottom: 10px;
+}
+
+#empresas {
+    display: block;
+    text-align: center;
+    margin: 20px;
+}
+
+#empresas img {
+    margin: 20px;
+}
+
 footer {
     text-align: center;
     margin: 20px;
+    padding-bottom: 10px;
 }
 
 @media only screen and (max-width: 1024px) {
