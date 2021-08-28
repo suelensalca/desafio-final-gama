@@ -33,9 +33,9 @@ router.post("/inserir-candidato", async function (req, res, next) {
     await db.query(queryStr)
     result.data = body
   } catch (error) {
-    result.status = 500;
+    result.status = 401;
     result.data = error;
-  } 
+  }
 
   res.status(result.status).send(result);
 
