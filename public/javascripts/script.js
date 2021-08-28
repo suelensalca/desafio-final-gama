@@ -41,7 +41,7 @@ const pesquisarCep = async() => {
     limparFormulario();
     
     const cepValue = cep.value;
-    const url = `http://viacep.com.br/ws/${cepValue}/json/`;
+    const url = `https://viacep.com.br/ws/${cepValue}/json/`;
     
     if (cepValido(cepValue)) {
         const dados = await axios.get(url);
