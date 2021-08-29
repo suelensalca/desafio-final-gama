@@ -21,7 +21,4 @@ app.use('/users', usersRouter);
 app.use('/api', apiRouter);
 app.use('/api/docs', apiDocsRouter);
 
-console.log(`ENVS:  ${process.env.BASE_URL}`)
-console.log(`ENVS:  ${process.env.DATABASE_HOST}`)
-
 module.exports = app;

@@ -6,7 +6,7 @@ const endpointsFiles = ['./routes/api.js']
 const doc = {
     info: {
         version: "1.0.0",
-        title: "JobsNET API Suelen",
+        title: "JobsNET API by Suelen",
         description: "Documentação gerada automaticamente por <b>swagger-autogen</b> para a API de cadastro de candidatos do programa Start Tech."
     },
     host:  process.env.BASE_URL,
