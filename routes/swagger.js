@@ -20,13 +20,6 @@ const doc = {
             "description": "Endpoints"
         }
     ],
-    securityDefinitions: {
-        api_key: {
-            type: "apiKey",
-            name: "api_key",
-            in: "header"
-        },
-    },
     definitions: {
         Candidato: {
             cpf:"00000000000", 
@@ -53,6 +46,28 @@ const doc = {
                 "nome": "Nome Ficticio",
                 "email": "email@email.com"
             }]
+        },
+        CandidatoCadastrado: {
+            "status": 200,
+            "data": {
+              "nome": "Nome Ficticio",
+              "cargo": "Desenvolvedor",
+              "data_nascimento": "1999-02-08",
+              "estado_civil": "Casado(a)",
+              "sexo": "Feminino",
+              "cep": "00000000",
+              "endereco": "Rua Nome",
+              "bairro": "Bairro",
+              "cidade": "Cidade",
+              "estado": "Estado",
+              "telefone_fixo": "(00)00000000",
+              "celular": "(00)00000000",
+              "email": "email@email.com.br",
+              "identidade": "000000000",
+              "cpf": "00000000000",
+              "possui_veiculo": "1",
+              "possui_habilitacao": "1"
+            }
         }
     }
 }

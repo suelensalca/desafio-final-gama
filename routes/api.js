@@ -41,10 +41,6 @@ router.post("/inserir-candidato", async function (req, res, next) {
         schema: { $ref: "#/definitions/Candidato" }
 } */
 
-/* #swagger.security = [{
-        "apiKeyAuth": []
-}] */
-
   const result = {
     status: 200,
     data: {}
@@ -60,6 +56,11 @@ router.post("/inserir-candidato", async function (req, res, next) {
     result.status = 401;
     result.data = error;
   }
+
+  /* #swagger.responses[200] = { 
+      schema: { $ref: "#/definitions/CandidatoCadastrado" },
+      description: 'Candidatos encontrados.' 
+} */
 
   res.status(result.status).send(result);
 
