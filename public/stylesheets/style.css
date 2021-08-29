@@ -149,6 +149,12 @@ footer {
     padding-bottom: 10px;
 }
 
+footer p {
+    font-size: small;
+    color: rgb(19, 2, 92);
+    padding-top: 15px;
+}
+
 @media only screen and (max-width: 1024px) {
     main {
         display: block;
