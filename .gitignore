@@ -1,5 +1,6 @@
 node_modules
 package-lock.json
 .env
-
+routes/swagger_output.json
 docs/
+routes/swagger_output.json
