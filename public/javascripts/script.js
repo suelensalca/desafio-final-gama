@@ -62,7 +62,26 @@ const validarCPF = () => {
     let cpfValue = cpf.value;
     let result = true;
 
-    if(cpfValue.length != 11) {
+    if (typeof cpfValue !== "string"){
+        result = false;
+    }
+    
+    cpfValue = cpfValue.replace(/[\s.-]*/igm, '')
+    
+    if (
+        !cpfValue ||
+        cpfValue.length != 11 ||
+        cpfValue == "00000000000" ||
+        cpfValue == "11111111111" ||
+        cpfValue == "22222222222" ||
+        cpfValue == "33333333333" ||
+        cpfValue == "44444444444" ||
+        cpfValue == "55555555555" ||
+        cpfValue == "66666666666" ||
+        cpfValue == "77777777777" ||
+        cpfValue == "88888888888" ||
+        cpfValue == "99999999999" 
+    ) {
         result = false
     } else {
         var numeros = cpfValue.substring(0, 9)
@@ -93,22 +112,27 @@ const validarCPF = () => {
         if(resultado != digitos.charAt(1)) {
             result = false
         }
-
-        if(result == false){
-            alert('CPF inválido');
-            cpf.value = ''
-        }
-
-        return result;
     }
+    
+    if(result == false){
+        alert('CPF inválido');
+        cpf.value = ''
+    }
+
+    return result;
+    
 }
 
 const enviarDados = async(event) => {
     event.preventDefault();
 
+    let cpfValue = cpf.value;
+
+    cpfValue = cpfValue.replace(/[\s.-]*/igm, '')
+
     const url = "./api/inserir-candidato";
     const data = {
-       'cpf': cpf.value, 
+       'cpf': cpfValue, 
        'nome': nome.value, 
        'cargo': cargo.value, 
        'data_nascimento': data_nascimento.value, 

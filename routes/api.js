@@ -59,7 +59,7 @@ router.post("/inserir-candidato", async function (req, res, next) {
 
   /* #swagger.responses[200] = { 
       schema: { $ref: "#/definitions/CandidatoCadastrado" },
-      description: 'Candidatos encontrados.' 
+      description: 'Candidato cadastrado com sucesso.' 
 } */
 
   res.status(result.status).send(result);
