@@ -1,0 +1,177 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "JobsNET API Suelen",
+    "description": "Documentação gerada automaticamente por <b>swagger-autogen</b> para a API de cadastro de candidatos do programa Start Tech."
+  },
+  "host": "localhost:3000",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Candidatos",
+      "description": "Endpoints"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/candidatos": {
+      "get": {
+        "tags": [
+          "Candidatos"
+        ],
+        "description": "Endpoint para listar candidatos cadastrados",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/ListaCandidato"
+            },
+            "description": "Candidatos encontrados."
+          }
+        }
+      }
+    },
+    "/inserir-candidato": {
+      "post": {
+        "tags": [
+          "Candidatos"
+        ],
+        "description": "Endpoint para cadastro de candidatos",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Cadastro de candidatos",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Candidato"
+            }
+          }
+        ],
+        "responses": {},
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Candidato": {
+      "type": "object",
+      "properties": {
+        "cpf": {
+          "type": "string",
+          "example": "00000000000"
+        },
+        "nome": {
+          "type": "string",
+          "example": "Nome Ficticio"
+        },
+        "cargo": {
+          "type": "string",
+          "example": "Desenvolvedor"
+        },
+        "data_nascimento": {
+          "type": "string",
+          "example": "1999-02-08"
+        },
+        "estado_civil": {
+          "type": "string",
+          "example": "Casado(a)"
+        },
+        "sexo": {
+          "type": "string",
+          "example": "Feminino"
+        },
+        "cep": {
+          "type": "string",
+          "example": "00000-000"
+        },
+        "endereco": {
+          "type": "string",
+          "example": "Rua Nome"
+        },
+        "bairro": {
+          "type": "string",
+          "example": "Bairro"
+        },
+        "cidade": {
+          "type": "string",
+          "example": "Cidade"
+        },
+        "estado": {
+          "type": "string",
+          "example": "Estado"
+        },
+        "telefone_fixo": {
+          "type": "string",
+          "example": "(00)0000-0000"
+        },
+        "celular": {
+          "type": "string",
+          "example": "(11)1111-1111"
+        },
+        "email": {
+          "type": "string",
+          "example": "email@email.com"
+        },
+        "identidade": {
+          "type": "string",
+          "example": "12311111"
+        },
+        "possui_veiculo": {
+          "type": "string",
+          "example": "1"
+        },
+        "possui_habilitacao": {
+          "type": "string",
+          "example": "1"
+        }
+      }
+    },
+    "ListaCandidato": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "number",
+          "example": 200
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nome": {
+                "type": "string",
+                "example": "Nome Ficticio"
+              },
+              "email": {
+                "type": "string",
+                "example": "email@email.com"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
