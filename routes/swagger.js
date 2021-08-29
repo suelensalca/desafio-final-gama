@@ -11,7 +11,7 @@ const doc = {
     },
     host:  process.env.BASE_URL,
     basePath: "/api",
-    schemes: ['http', 'https'],
+    schemes: ['https', 'http'],
     consumes: ['application/json'],
     produces: ['application/json'],
     tags: [
